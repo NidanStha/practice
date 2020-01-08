@@ -13,17 +13,31 @@
         <input type="submit" name="submit" value="submit"><br>
         <?php calcu(); ?>
       </form>
+      <?php
+      function calcu(){
+        if(isset($_POST['mult'])){
+          $mult = (int)$_POST['mult'];
+          for($i=1;$i<=10;$i++){
+            echo $mult . '*' . $i . '=' . $mult*$i . "<br/>";
+          }
+        }
+      }
+      ?>
+    </div>
+
+    <div class="session2">
+      <!--<form action="index.php" method="post">
+        ball: <input type="checkbox" name="numb[]" value="apple" id="">
+        bat: <input type="checkbox" name="numb[]" value="ball" id="">
+        field: <input type="checkbox" name="numb[]" value="cat" id="">
+        <input type="submit" value="submit">
+      </form>-->
+        <?php
+          $friends = array('ram','empty' , 'shyam','full');
+          foreach ($friends as $frnd) {
+            echo $frnd."<br />";
+          }
+        ?>
     </div>
   </body>
 </html>
-
-<?php
-  function calcu(){
-    if(isset($_POST['mult'])){
-      $mult = (int)$_POST['mult'];
-      for($i=1;$i<=10;$i++){
-        echo $mult . '*' . $i . '=' . $mult*$i . "<br/>";
-      }
-    }
-  }
-?>
