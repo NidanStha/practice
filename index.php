@@ -6,6 +6,26 @@
     <title>PHP practice</title>
   </head>
   <body>
+    <nav>
+      <ol>
+        <a href="#session1">
+          <li>Multiplication</li>
+        </a>
+        <a href="#session2">
+          <li>Array and foreach</li>
+        </a>
+        <a href="#session3">
+          <li>Switch case</li>
+        </a>
+        <a href="#session4">
+          <li>Class and Object</li>
+        </a>
+        <a href="#session5">
+          <li></li>
+        </a>
+      </ol>
+    </nav>
+
     <div class="session1">
       <h5>Multiplication</h5>
       <form class="" action="index.php" method="post" autocomplete="off">
@@ -102,25 +122,6 @@
 
         $book1->display();
 
-    /*
-        //extra example
-        class Fruit {
-          // Properties
-          public $name;
-          public $color;
-
-          // Methods
-          function set_name($name) {
-            $this->name = $name;
-          }
-          function get_name() {
-            echo $this->name;
-          }
-        }
-        $fru=new Fruit();
-        $fru->set_name("nidan");
-        $fru->get_name();
-        */
       ?>
     </div>
   </body>

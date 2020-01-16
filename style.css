@@ -2,6 +2,17 @@ body{
   margin: 0px;
 }
 
+nav{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  padding: 10px;
+}
+nav>ol{
+  float: right;
+}
+
 div{
   margin: 0px auto;
   width: 1200px;
