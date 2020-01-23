@@ -127,7 +127,7 @@
 
     <div class="session6">
       <h5>database</h5>
-
+<!--
       <?php
         $host="localhost";
         $user="root";
@@ -172,10 +172,65 @@
           mysqli_free_result($result);
           mysqli_close($con);
         }
+      ?> -->
+
+
+
+    </div>
+    <div class="session7">
+      <!-- <?php
+        $host="localhost";
+        $user="root";
+        $pass="";
+        $db="continue";
+        $con = mysqli_connect($host,$user,$pass,$db);
+
+        $qr = "SELECT * from tb_con";
+        $result = mysqli_query($con,$qr);
+        $noofro = mysqli_num_rows($result);
+        echo '<table>';
+        while($row = mysqli_fetch_assoc($result)){
+            echo '<tr>
+              <td>'.
+                $row['SN'].'
+              </td>
+              <td>'.
+                $row['Name'].'
+              </td>
+              <td>'.
+                $row['Contact'].'
+              </td>
+            </tr>';
+        }
+        echo '</table>';
+        echo $noofro;
+        mysqli_close($con);
+
       ?>
+      <form action="index.php" method="get">
+        <input type="text" name="names" id="">
+        <input type="submit" name="submit">
+        <?php if (isset($_GET['submit'])) {
+          echo 'submitted';
+        }else{
+          echo ' ';
+        } ?>
+      </form> -->
 
-
-
+      <form action="index.php" method="post">
+        <input type="submit" name="submit" value="submit">
+      </form>
+      <?php
+        $uur = $_SERVER['PHP_SELF'];
+        $uurl = 'localhost/image' . $uur;
+        if (isset($_POST['submit'])) {
+          echo $uurl;
+          function yoo($yee){
+            header("Location:" . $yee);
+          }
+          yoo('google');
+        }
+      ?>
     </div>
   </body>
 </html>
