@@ -6,7 +6,7 @@
     <title>PHP practice</title>
   </head>
   <body>
-    <!-- <nav>
+    <nav>
       <ol>
         <a href="#session1">
           <li>Multiplication</li>
@@ -24,7 +24,7 @@
           <li></li>
         </a>
       </ol>
-    </nav> -->
+    </nav> 
 
     <div class="session1">
       <h5>Multiplication</h5>
