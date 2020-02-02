@@ -6,27 +6,8 @@
     <title>PHP practice</title>
   </head>
   <body>
-    <nav>
-      <ol>
-        <a href="#session1">
-          <li>Multiplication</li>
-        </a>
-        <a href="#session2">
-          <li>Array and foreach</li>
-        </a>
-        <a href="#session3">
-          <li>Switch case</li>
-        </a>
-        <a href="#session4">
-          <li>Class and Object</li>
-        </a>
-        <a href="#session5">
-          <li></li>
-        </a>
-      </ol>
-    </nav> 
-
-    <div class="session1">
+    <?php include 'nav.php'; ?>
+    <div class="session1" id="session1">
       <h5>Multiplication</h5>
       <form class="" action="index.php" method="post" autocomplete="off">
         <label for="num_value">Number: </label>
@@ -46,14 +27,8 @@
       ?>
     </div>
 
-    <div class="session2">
+    <div class="session2" id="session2">
       <h5>Array and foreach</h5>
-      <!--<form action="index.php" method="post">
-        ball: <input type="checkbox" name="numb[]" value="apple" id="">
-        bat: <input type="checkbox" name="numb[]" value="ball" id="">
-        field: <input type="checkbox" name="numb[]" value="cat" id="">
-        <input type="submit" value="submit">
-      </form>-->
         <?php
           $friends = array('ram','empty','shyam','full');
           foreach ($friends as $frnd) {
@@ -62,7 +37,7 @@
         ?>
     </div>
 
-    <div class="session3">
+    <div class="session3"  id="session3">
       <h5>Switch case</h5>
       <form action="index.php" method="post">
         <input type="text" name="grade" id="">
@@ -92,12 +67,8 @@
       ?>
     </div>
 
-    <div class="session4">
+    <div class="session4"  id="session4">
       <h5>Class and Object</h5>
-      <!--<form action="index.php" method="post">
-        <input type="text" name="obname" id="">
-        <input type="submit" value="submit" id="">
-      </form>-->
       <?php
         class book{
           var $bok;
@@ -125,9 +96,8 @@
       ?>
     </div>
 
-    <div class="session6">
+    <div class="session6" id="session6">
       <h5>database</h5>
-<!--
       <?php
         $host="localhost";
         $user="root";
@@ -169,66 +139,7 @@
               echo $row['SN'] . ' ' . $row['Name']. ' ' . $row['Contact'] . ' ' . '<br />';
             }
           }
-          mysqli_free_result($result);
           mysqli_close($con);
-        }
-      ?> -->
-
-
-
-    </div>
-    <div class="session7">
-      <!-- <?php
-        $host="localhost";
-        $user="root";
-        $pass="";
-        $db="continue";
-        $con = mysqli_connect($host,$user,$pass,$db);
-
-        $qr = "SELECT * from tb_con";
-        $result = mysqli_query($con,$qr);
-        $noofro = mysqli_num_rows($result);
-        echo '<table>';
-        while($row = mysqli_fetch_assoc($result)){
-            echo '<tr>
-              <td>'.
-                $row['SN'].'
-              </td>
-              <td>'.
-                $row['Name'].'
-              </td>
-              <td>'.
-                $row['Contact'].'
-              </td>
-            </tr>';
-        }
-        echo '</table>';
-        echo $noofro;
-        mysqli_close($con);
-
-      ?>
-      <form action="index.php" method="get">
-        <input type="text" name="names" id="">
-        <input type="submit" name="submit">
-        <?php if (isset($_GET['submit'])) {
-          echo 'submitted';
-        }else{
-          echo ' ';
-        } ?>
-      </form> -->
-
-      <form action="index.php" method="post">
-        <input type="submit" name="submit" value="submit">
-      </form>
-      <?php
-        $uur = $_SERVER['PHP_SELF'];
-        $uurl = 'localhost/image' . $uur;
-        if (isset($_POST['submit'])) {
-          echo $uurl;
-          function yoo($yee){
-            header("Location:" . $yee);
-          }
-          yoo('google');
         }
       ?>
     </div>

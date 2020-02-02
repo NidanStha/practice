@@ -1,16 +1,30 @@
 body{
   margin: 0px;
 }
+section{
+  width: auto;
+  background-color: #d6d6d6;
+  height: 50px;
+}
 
 nav{
+  float: right;
+  margin-bottom: 20px;
+  position: static;
+  width: inherit;
 }
 a{
   text-decoration: none;
-  padding: 10px;
+  padding: 16px;
+  color: #000;
+  transition: .5s;
 }
-nav>ol{
+a:hover{
+  background-color: #fff;
+}
+li{
   list-style: none;
-  float: right;
+  float: left;
 }
 
 div{
