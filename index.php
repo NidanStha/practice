@@ -96,7 +96,7 @@
       ?>
     </div>
 
-    <div class="session6" id="session6">
+    <div class="session5" id="session5">
       <h5>database</h5>
       <?php
         $host="localhost";
@@ -140,6 +140,50 @@
             }
           }
           mysqli_close($con);
+        }
+      ?>
+    </div>
+    <div class="session6">
+      <h5>Loop logic</h5>
+      <table border="2px">
+        <?php
+          $a=1;
+          for($k=1;$k<=10;$k++){
+            echo '<tr>';
+            for($i=1;$i<=10;$i++){
+              echo '<td>' . $a*$i . '</td>';
+            }
+            ++$a;
+            echo '</tr>';
+          }
+        ?>
+      </table>
+    </div>
+    <div class="session7">
+      <h5>radio, checkbox and select</h5>
+      <form action="index.php" method="post">
+        <label for="rrd">Gender:</label>
+        Female: <input type="radio" name="gn" id="rrd" value="femalee" />Male: <input type="radio" name="gn" id="rrd" value="malee"/><br>
+        Hobby: <input type="checkbox" name="hobby[]" id="" value="ball">
+        <input type="checkbox" name="hobby[]" id="" value="bat">
+        <input type="checkbox" name="hobby[]" id="" value="cat"><br>
+        <select name="con" id="">
+          <option value="nepal">Nepal</option>
+          <option value="china">China</option>
+          <option value="india">India</option>
+        </select>
+        <br><input type="submit" value="subm" name="subm">
+      </form>
+      <?php
+        if ($_POST['subm']) {
+          $ggn=$_POST['gn'];
+          $hobby=$_POST['hobby'];
+          $con=strtoupper($_POST['con']);
+          echo '<br />' . $ggn;
+          foreach ($hobby as $hob) {
+            echo '<br />' . $hob;
+          }
+          echo '<br />' . $con;
         }
       ?>
     </div>

@@ -34,3 +34,7 @@ div{
   padding: 10px 0px;
   border-bottom: 2px solid black;
 }
+
+table{
+  margin: 0px auto;
+}
