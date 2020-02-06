@@ -40,7 +40,7 @@
     <div class="session3"  id="session3">
       <h5>Switch case</h5>
       <form action="index.php" method="post">
-        <input type="text" name="grade" id="">
+        <input type="text" name="grade">
         <input type="submit" value="submit" >
       </form>
       <?php
@@ -163,19 +163,19 @@
       <h5>radio, checkbox and select</h5>
       <form action="index.php" method="post">
         <label for="rrd">Gender:</label>
-        Female: <input type="radio" name="gn" id="rrd" value="femalee" />Male: <input type="radio" name="gn" id="rrd" value="malee"/><br>
-        Hobby: <input type="checkbox" name="hobby[]" id="" value="ball">
-        <input type="checkbox" name="hobby[]" id="" value="bat">
-        <input type="checkbox" name="hobby[]" id="" value="cat"><br>
-        <select name="con" id="">
+        Female: <input type="radio" name="gn" value="femalee" />Male: <input type="radio" name="gn" value="malee"/><br>
+        Hobby: <input type="checkbox" name="hobby[]" value="ball">
+        <input type="checkbox" name="hobby[]" value="bat">
+        <input type="checkbox" name="hobby[]" value="cat"><br>
+        <select name="con">
           <option value="nepal">Nepal</option>
           <option value="china">China</option>
           <option value="india">India</option>
         </select>
-        <br><input type="submit" value="subm" name="subm">
+        <br><input type="submit" name="subm">
       </form>
       <?php
-        if ($_POST['subm']) {
+        if (isset($_POST['subm'])) {
           $ggn=$_POST['gn'];
           $hobby=$_POST['hobby'];
           $con=strtoupper($_POST['con']);
@@ -186,6 +186,40 @@
           echo '<br />' . $con;
         }
       ?>
+    </div>
+    <div class="session8">
+      <h5>login field</h5>
+      <form action="index.php" method="get" class="lg_fm">
+        <input type="text" name="users" class="lg_ip" id="user" placeholder="Username"><br>
+        <input type="password" name="passes" class="lg_ip" id="pass" placeholder="Password"><br>
+        <input type="submit" class="lg_bt" name="login">
+        <?php
+          $host="localhost";
+          $user="root";
+          $pass="";
+          $db="continue";
+          $con = new mysqli($host,$user,$pass,$db);
+        ?>
+        <?php
+          if (isset($_GET['login'])) {
+            $user=$_GET['users'];
+            $pass=$_GET['passes'];
+            $qu = "SELECT Name,Contact from tb_con where Name='$user'";
+            $res = $con->query($qu);
+            $rowobj=$res->fetch_object();
+            //if (!empty($rowobj)) {
+              if ($rowobj->Name==$user && $rowobj->Contact==$pass){
+                $stat = 'Logged In';
+                //echo $rowobj->Name . ' ' . $rowobj->Contact;
+              }else{
+                $stat = 'Not Logged In';
+              }
+              echo "<span class='lgstat' id='lgstat'>" . $stat . "</span>";
+            }
+          //}
+          echo '<br />';
+        ?>
+      </form>
     </div>
   </body>
 </html>

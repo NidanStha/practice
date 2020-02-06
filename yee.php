@@ -11,19 +11,31 @@
   <input type="submit" name="submit" value="submit">
 </form>
 <?php
-  if (isset($_GET['submit'])) {
-    echo $uur;
-    $iname=$_GET['inum'];
 
-    $qur="DELETE from tb_con where SN=$iname";
-    $result=mysqli_query($con,$qur);
-    if($result) {
-      echo 'done';
-      header('refresh:0, url='.$uur);
-    }else{
-      echo 'not';
-    }
-
-    mysqli_close($con);
+  function dff($x){
+    return $x*2;
   }
+  echo 'd';
+  $a=' nidan';
+  trim($a);
+  if (empty($a)) {
+    echo 'no';
+  }else {
+    echo $a;
+  }
+  // if (isset($_GET['submit'])) {
+  //   echo $uur;
+  //   $iname=$_GET['inum'];
+  //
+  //   $qur="DELETE from tb_con where SN=$iname";
+  //   $result=mysqli_query($con,$qur);
+  //   if($result) {
+  //     echo 'done';
+  //     header('refresh:0, url='.$uur);
+  //   }else{
+  //     echo 'not';
+  //   }
+  //
+  //   mysqli_close($con);
+  // }
 ?>

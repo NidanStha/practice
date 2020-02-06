@@ -38,3 +38,48 @@ div{
 table{
   margin: 0px auto;
 }
+
+/* login form */
+.session8{
+  background-color: #79dde2;
+  height: 60vh;
+  font-family: arial;
+  overflow: hidden;
+}
+.lg_fm{
+  display: inline-table;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 50px 90px;
+}
+.lg_ip{
+  border: 1px solid transparent;
+  outline: none;
+  background-color: #efefef;
+  padding: 9px;
+  margin-bottom: 9px;
+  transition: 0.4s all;
+}
+.lg_ip:hover{
+  border: 1px solid #79dde2;
+}
+
+.lg_bt{
+  border: none;
+  display: block;
+  width: 100%;
+  background-color: #79dde2;
+  padding: 7px;
+  margin-bottom: 9px;
+  transition: 0.5s;
+}
+.lg_bt:active{
+  transform: scale(0.9);
+}
+.lgstat{
+  background: #31ff41;
+  padding: 9px;
+  margin: 0px;
+  display: block;
+  transition: 0.5s;
+}
